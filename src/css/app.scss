@@ -1,5 +1,27 @@
 // app global css in SCSS form
 
+html {
+  overflow-y: overlay;
+  scrollbar-width: auto;
+  scrollbar-color: $primary transparent;
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+  padding-inline: 5px;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+  padding: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: $primary;
+  border-right: 2px transparent solid;
+  background-clip: padding-box;
+}
+
 .q-page, .q-layout {
   background-color: $secondary;
 }

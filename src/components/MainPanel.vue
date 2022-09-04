@@ -1,14 +1,14 @@
 <template>
   <div
     class="banner flex"
-    :style="{ backgroundImage: 'url(' + list[0].horizontal_banner + ')' }"
+    :style="{ backgroundImage: 'url(' + horizontalBanner + ')' }"
   >
     <div class="full-width content">
       <div class="info title">
-        {{ list[0].name }}
+        {{ title }}
       </div>
       <div class="info tags">
-        {{ list[0].tags.join(', ') }}
+        {{ tags.join(', ') }}
       </div>
       <div>
         <q-btn
@@ -36,6 +36,20 @@ import db from 'src/db.json';
 
 export default {
   name: 'MainPanel',
+  props: {
+    title: {
+      type: String,
+      required: true,
+    },
+    tags: {
+      type: Array,
+      required: true,
+    },
+    horizontalBanner: {
+      type: String,
+      required: true,
+    },
+  },
   data() {
     return {
       list: db,
@@ -58,9 +72,9 @@ export default {
 .content {
   padding: 16px;
   background: linear-gradient(to top,
-  rgba(24, 26, 32,0.8) 1%,
-  rgba(24,26,32,0.1) 90%,
-  rgba(24,26,32,0) 100%);
+    rgba(24, 26, 32,0.8) 1%,
+    rgba(24,26,32,0.1) 90%,
+    rgba(24,26,32,0) 100%);
 }
 
 .info {
