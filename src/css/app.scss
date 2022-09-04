@@ -1,0 +1,13 @@
+// app global css in SCSS form
+
+.q-page, .q-layout {
+  background-color: $secondary;
+}
+
+.q-btn {
+  text-transform: none;
+}
+
+.q-btn--outline:before {
+  border: 2px solid currentColor;
+}
